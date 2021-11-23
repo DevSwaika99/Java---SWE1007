@@ -49,6 +49,9 @@ public class HomeController implements Initializable {
     private Button btnDelete;
 
     @FXML
+    private Button btnShowAll;
+
+    @FXML
     private Label lblStatus;
 
     @FXML
@@ -97,7 +100,21 @@ public class HomeController implements Initializable {
             lblStatus.setTextFill(Color.GREEN);
             lblStatus.setText("Input Fields Reset");
         }
+        if(event.getSource() == btnShowAll){
+//            try {
+//                ResultSet rs = connection.createStatement().executeQuery(SQL);
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+
+            fetColumnList();
+
+            lblStatus.setTextFill(Color.TOMATO);
+            lblStatus.setText("All data printed");
+        }
     }
+    private ObservableList<ObservableList> data;
+    String SQL = "SELECT * from emps";
 
     private void clearFields() {
         txtFirstname.clear();
@@ -113,7 +130,7 @@ public class HomeController implements Initializable {
     }
 
 
-    private String saveData() {
+    private void saveData() {
 
         try {
             String st = "INSERT INTO emps ( firstname, lastname, email, gender, leavedate, rejoindate) VALUES (?,?,?,?,?,?)";
@@ -132,18 +149,15 @@ public class HomeController implements Initializable {
             fetRowList();
             //clear fields
             clearFields();
-            return "Success";
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             lblStatus.setTextFill(Color.TOMATO);
             lblStatus.setText(ex.getMessage());
-            return "Exception";
         }
     }
 
-    private ObservableList<ObservableList> data;
-    String SQL = "SELECT * from emps";
+
 
     //only fetch columns
     private void fetColumnList() {
