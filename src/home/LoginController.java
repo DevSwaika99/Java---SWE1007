@@ -18,18 +18,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
     @FXML
     private Label lblErrors;
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private Label btnBack;
@@ -46,19 +41,16 @@ public class LoginController implements Initializable {
     @FXML
     public void handleButtonAction(javafx.scene.input.MouseEvent mouseEvent) {
 
-        if (mouseEvent.getSource() == btnBack) {
-            System.exit(0);
-        }
+        if (mouseEvent.getSource() == btnBack) System.exit(0);
 
-        if (mouseEvent.getSource() == btnLogin) {
-            //login here
+        if (mouseEvent.getSource() == btnLogin) {   //login here
             if (logIn().equals("Success")) {
                 try {
                     Node node = (Node) mouseEvent.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();
                     stage.setMaximized(true);
                     stage.close();
-                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("home.fxml")));
+                    Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml"))));
                     stage.setScene(scene);
                     stage.show();
 
@@ -78,7 +70,7 @@ public class LoginController implements Initializable {
         con = ConnectionUtil.conDB();
     }
 
-    Connection con = null;
+    Connection con;
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
 

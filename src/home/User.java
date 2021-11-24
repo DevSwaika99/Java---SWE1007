@@ -2,23 +2,14 @@ package home;
 
 public class User {
 
-    private String rejoindate;
+    private String rejoindate, email, firstname, lastname, leavedate, gender;
 
-    private String email;
-
-    private String leavedate;
-
-    private String gender;
-
-    private String lastname;
-
-    private String firstname;
+    //getter setter methods
 
     public String getId ()
     {
         return rejoindate;
     }
-
     public void setId (String rejoindate)
     {
         this.rejoindate = rejoindate;
@@ -28,7 +19,6 @@ public class User {
     {
         return email;
     }
-
     public void setEmail (String email)
     {
         this.email = email;
@@ -38,7 +28,6 @@ public class User {
     {
         return leavedate;
     }
-
     public void setDob (String dob)
     {
         this.leavedate = dob;
@@ -48,7 +37,6 @@ public class User {
     {
         return gender;
     }
-
     public void setGender (String gender)
     {
         this.gender = gender;
@@ -58,7 +46,6 @@ public class User {
     {
         return lastname;
     }
-
     public void setLastname (String lastname)
     {
         this.lastname = lastname;
@@ -68,7 +55,6 @@ public class User {
     {
         return firstname;
     }
-
     public void setFirstname (String firstname)
     {
         this.firstname = firstname;

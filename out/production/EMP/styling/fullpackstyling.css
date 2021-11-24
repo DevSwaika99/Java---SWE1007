@@ -1,36 +1,36 @@
 .button
 {
 -fx-background-color : #FFF;
--fx-border-color: #FFFF00;
+-fx-border-color: #bcd4f4;
 -fx-text-fill:  #0C3988;
 }
 .button:hover
 {
--fx-background-color : #FFFF00 ;
+-fx-background-color : #bcd4f4 ;
 -fx-text-fill:  #000000;
 -fx-border-color: #000000;
 }
 .button:pressed
 {
--fx-background-color : #FFFF00 ;
+-fx-background-color : #bcd4f4 ;
 -fx-text-fill: #FFF;
 }
 
 .button2
 {
--fx-background-color :  #ffff00;
+-fx-background-color :  #bcd4f4;
 -fx-border-color: #000000;
 -fx-text-fill:  #000000;
 }
 .button2:hover
 {
--fx-background-color : #ffff00 ;
+-fx-background-color : #bcd4f4 ;
 -fx-text-fill:   #000000;
 -fx-border-color: #ffffff;
 }
 .button2:pressed
 {
--fx-background-color : #ffff00 ;
+-fx-background-color : #bcd4f4 ;
 -fx-text-fill: #000000;
 }
 
