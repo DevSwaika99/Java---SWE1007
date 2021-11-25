@@ -4,65 +4,59 @@ public class User {
 
     private String rejoindate, email, firstname, lastname, leavedate, gender;
 
-    //getter setter methods
+    // getter setter methods
 
-    public String getId ()
-    {
+    public String getId() {
         return rejoindate;
     }
-    public void setId (String rejoindate)
-    {
+
+    public void setId(String rejoindate) {
         this.rejoindate = rejoindate;
     }
 
-    public String getEmail ()
-    {
+    public String getEmail() {
         return email;
     }
-    public void setEmail (String email)
-    {
+
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getDob ()
-    {
+    public String getDob() {
         return leavedate;
     }
-    public void setDob (String dob)
-    {
+
+    public void setDob(String dob) {
         this.leavedate = dob;
     }
 
-    public String getGender ()
-    {
+    public String getGender() {
         return gender;
     }
-    public void setGender (String gender)
-    {
+
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-    public String getLastname ()
-    {
+    public String getLastname() {
         return lastname;
     }
-    public void setLastname (String lastname)
-    {
+
+    public void setLastname(String lastname) {
         this.lastname = lastname;
     }
 
-    public String getFirstname ()
-    {
+    public String getFirstname() {
         return firstname;
     }
-    public void setFirstname (String firstname)
-    {
+
+    public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [rejoindate = "+rejoindate+", leavedate = "+leavedate+", email = "+email+", gender = "+gender+", lastname = "+lastname+", firstname = "+firstname+"]";
+    public String toString() {
+        return "ClassPojo [rejoindate = " + rejoindate + ", leavedate = " + leavedate + ", email = " + email
+                + ", gender = " + gender + ", lastname = " + lastname + ", firstname = " + firstname + "]";
     }
 }
