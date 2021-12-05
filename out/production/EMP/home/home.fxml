@@ -54,7 +54,7 @@
       </TextField>
       <ComboBox fx:id="txtGender" editable="true" layoutX="43.0" layoutY="354.0" prefHeight="32.0" prefWidth="304.0"
                 promptText="gender" visibleRowCount="3"/>
-      <DatePicker fx:id="txtDOB" layoutX="43.0" layoutY="409.0" prefHeight="32.0" prefWidth="304.0"
+      <DatePicker fx:id="txtleave" layoutX="43.0" layoutY="409.0" prefHeight="32.0" prefWidth="304.0"
                   promptText="leave date"/>
       <Button fx:id="btnSave" layoutX="45.0" layoutY="519.0" mnemonicParsing="false" onMousePressed="#HandleEvents"
               prefHeight="32.0" prefWidth="304.0" styleClass="button2" stylesheets="@../styling/fullpackstyling.css"
@@ -63,7 +63,7 @@
             <Font name="Gotham-Bold" size="12.0"/>
          </font>
       </Button>
-      <DatePicker fx:id="txtDOB1" layoutX="43.0" layoutY="463.0" prefHeight="32.0" prefWidth="304.0"
+      <DatePicker fx:id="txtrejoin" layoutX="43.0" layoutY="463.0" prefHeight="32.0" prefWidth="304.0"
                   promptText="rejoin date"/>
       <Button fx:id="btnDelete" layoutX="45.0" layoutY="569.0" mnemonicParsing="false" onMousePressed="#HandleEvents"
               prefHeight="32.0" prefWidth="304.0" styleClass="button2" stylesheets="@../styling/fullpackstyling.css"
@@ -72,12 +72,7 @@
               prefHeight="32.0" prefWidth="304.0" styleClass="button2" stylesheets="@../styling/fullpackstyling.css"
               text="Reset"/>
    </Pane>
-<!--   <Label layoutX="752.0" layoutY="615.0" prefHeight="22.0" prefWidth="132.0" text="19MIS0263 - Niharika"-->
-<!--          textAlignment="CENTER">-->
-<!--      <font>-->
-<!--         <Font name="Gotham-Book" size="12.0"/>-->
-<!--      </font>-->
-<!--   </Label>-->
+
    <Label layoutX="401.0" layoutY="14.0" prefHeight="42.0" prefWidth="67.0" text="Status :" textAlignment="CENTER">
       <font>
          <Font name="Gotham-Bold" size="16.0"/>
@@ -90,7 +85,7 @@
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
       </columnResizePolicy>
    </TableView>
-   <Label fx:id="lblStatus" layoutX="468.0" layoutY="14.0" prefHeight="42.0" prefWidth="414.0" text="unknown"
+   <Label fx:id="lblStatus" layoutX="468.0" layoutY="14.0" prefHeight="42.0" prefWidth="414.0" text="Connected"
           textAlignment="CENTER">
       <font>
          <Font name="Gotham-Bold" size="16.0"/>

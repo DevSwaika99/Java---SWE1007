@@ -34,13 +34,13 @@ public class HomeController implements Initializable {
     private ComboBox<String> txtGender;
 
     @FXML
-    private DatePicker txtDOB;
+    private DatePicker txtleave;
 
     @FXML
     private Button btnSave;
 
     @FXML
-    private DatePicker txtDOB1;
+    private DatePicker txtrejoin;
 
     @FXML
     private Button btnReset;
@@ -67,7 +67,6 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         ObservableList<String> list = FXCollections.observableArrayList("Male", "Female", "Other");
         txtGender.setItems(list);
         fetColumnList();
@@ -81,7 +80,7 @@ public class HomeController implements Initializable {
                 lblStatus.setTextFill(Color.TOMATO);
                 lblStatus.setText("Enter all details");
             } else {
-                txtDOB.getValue();
+                txtleave.getValue();
                 if (txtEmail.getText().matches("[a-zA-z0-9._%+-]+@[a-zA-z0-9._%+-]+")) {
                     if (txtFirstname.getText().matches("[a-z A-Z]+") && txtLastname.getText().matches("[a-z A-Z]+")) {
                         saveData();
@@ -118,8 +117,8 @@ public class HomeController implements Initializable {
         txtFirstname.clear();
         txtLastname.clear();
         txtEmail.clear();
-        txtDOB.getEditor().clear();
-        txtDOB1.getEditor().clear();
+        txtleave.getEditor().clear();
+        txtrejoin.getEditor().clear();
         txtGender.getEditor().clear();
     }
 
@@ -131,14 +130,16 @@ public class HomeController implements Initializable {
     private void saveData() {
 
         try {
-            String st = "INSERT INTO emps ( firstname, lastname, email, gender, leavedate, rejoindate) VALUES (?,?,?,?,?,?)";
+            String st = "INSERT INTO emps ( firstname, lastname, email, gender, leavedate, rejoindate, ndays) VALUES (?,?,?,?,?,?,?)";
             preparedStatement = connection.prepareStatement(st);
             preparedStatement.setString(1, txtFirstname.getText());
             preparedStatement.setString(2, txtLastname.getText());
             preparedStatement.setString(3, txtEmail.getText());
             preparedStatement.setString(4, txtGender.getValue());
-            preparedStatement.setString(5, txtDOB.getValue().toString());
-            preparedStatement.setString(6, txtDOB1.getValue().toString());
+            preparedStatement.setString(5, txtleave.getValue().toString());
+            preparedStatement.setString(6, txtrejoin.getValue().toString());
+            long days = txtrejoin.getValue().toEpochDay() - txtleave.getValue().toEpochDay();
+            preparedStatement.setString(7, String.valueOf(days));
 
             preparedStatement.executeUpdate();
             lblStatus.setTextFill(Color.GREEN);
@@ -162,7 +163,7 @@ public class HomeController implements Initializable {
         try {
             ResultSet rs = connection.createStatement().executeQuery(SQL);
 
-            //SQL FOR SELECTING ALL OF CUSTOMER
+            //SQL FOR SELECTING ALL OF EMPLOYEES
             for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
                 //We are using non property style for making dynamic table
                 final int j = i;
@@ -173,7 +174,6 @@ public class HomeController implements Initializable {
                 tblData.getColumns().addAll(col);
 
                 System.out.println("Column [" + i + "] ");
-
             }
 
         } catch (Exception e) {

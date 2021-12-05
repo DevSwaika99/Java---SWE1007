@@ -42,12 +42,12 @@
             <Font name="Gotham-Bold" size="12.0" />
          </font>
       </Button>
-      <Label fx:id="btnForgot" layoutX="501.0" layoutY="356.0" prefHeight="18.0" prefWidth="112.0" text="Forgot password">
-         <font>
-            <Font name="Gotham-Book" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="685.0" layoutY="597.0" prefHeight="18.0" prefWidth="133.0" text="19MIS0263 - Niharika">
+<!--      <Label fx:id="btnForgot" layoutX="501.0" layoutY="356.0" prefHeight="18.0" prefWidth="112.0" text="Forgot password">-->
+<!--         <font>-->
+<!--            <Font name="Gotham-Book" size="12.0" />-->
+<!--         </font>-->
+<!--      </Label>-->
+      <Label layoutX="685.0" layoutY="597.0" prefHeight="18.0" prefWidth="133.0" >
          <font>
             <Font name="Gotham-Book" size="12.0" />
          </font>
